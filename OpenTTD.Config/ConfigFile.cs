@@ -25,7 +25,7 @@ namespace OpenTTD.Config
 
         public string GetFilePath
         {
-            get { return Path.Combine(GetDirectory, GetFileName; }
+            get { return Path.Combine(GetDirectory, GetFileName); }
         }
 
         public string GetDirectory
@@ -34,6 +34,8 @@ namespace OpenTTD.Config
             {
                 if (!string.IsNullOrEmpty(_dir) && Directory.Exists(_dir))
                     return _dir;
+                SetDirectory = GetDefaultDirectory;
+                return _dir;
             }
         }
 
